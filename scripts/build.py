@@ -38,12 +38,17 @@ def anchor(label, url, attrs=""):
     return f'<a href="{escape(url)}"{attrs}>{escape(label)}</a>'
 
 
-def links(items, local):
+def links(items, local, base):
     if not items:
         return ""
     result = []
     for label, url in items:
-        href = url if url.startswith("https://") else local + url
+        if url.startswith("https://"):
+            href = url
+        elif url.startswith("assets/"):
+            href = base + url
+        else:
+            href = local + url
         result.append(anchor(label, href, ' class="text-link"'))
     return '<div class="link-row">' + "".join(result) + "</div>"
 
@@ -61,61 +66,66 @@ def home(page, site, local, base):
         **text_fields(site), **text_fields(page), "local": local, "base": base,
         "mission": "".join(f"<span>{escape(word)}</span>" for word in page["mission"]),
         "domains": "".join(domain_cards), "paths": "".join(options), "forms": "".join(form_cards),
-        "links": links(zip(page["links"], ("research/", "center/"), strict=True), local),
+        "links": links(zip(page["links"], ("research/", "center/"), strict=True), local, base),
     })
 
 
-def section_html(section, local):
+def section_html(section, local, base):
     paragraphs = "".join(f"<p>{escape(p)}</p>" for p in section.get("body", []))
     items = "".join(f"<div><dt>{escape(k)}</dt><dd>{escape(v)}</dd></div>" for k, v in section.get("items", []))
     ident = escape(section["id"])
     return (f'<section id="{ident}"><h2>{escape(section["title"])}</h2>{paragraphs}'
-            + (f"<dl>{items}</dl>" if items else "") + links(section.get("links"), local) + "</section>")
+            + (f"<dl>{items}</dl>" if items else "") + links(section.get("links"), local, base) + "</section>")
 
 
-def material_list(lang, page, local):
+def material_list(lang, page, local, base):
     rows = []
     for slug in page["note_ids"]:
         note = content(lang, "notes/" + slug)
         title = anchor(note["title"], f"{local}materials/{slug}/")
-        rows.append(f'<article><p class="eyebrow">{escape(note["kind"])}</p><h2>{title}</h2>'
-                    f'<p>{escape(note["intro"])}</p><p class="status">{escape(note["status"])} · v1.0 · 2026-11-23</p></article>')
+        original = links([note["original"]], local, base) if "original" in note else ""
+        rows.append(
+            f'<article><p class="eyebrow">{escape(note["kind"])}</p><h2>{title}</h2>'
+            f'<p>{escape(note["intro"])}</p>'
+            f'<p class="credit-line">{escape(note["credit_line"])}</p>{original}</article>'
+        )
     return '<div class="material-list">' + "".join(rows) + "</div>"
 
 
-def worksheet(lang, page, local):
-    p = text_fields(page)
-    options = "".join(f'<option value="{key}" data-prompt="{escape(hint)}">{escape(title)}</option>'
-                      for key, title, hint in zip(SCENARIOS, page["scenarios"], page["prompts"], strict=True))
-    prompts = "".join(f"<dt>{escape(title)}</dt><dd>{escape(hint)}</dd>"
-                     for title, hint in zip(page["scenarios"], page["prompts"], strict=True))
-    required = "Напишите несколько слов для черновика." if lang == "ru" else "Write a few words for your draft."
-    return f'''<div class="notice"><h2>{p["contact"]}</h2><p>{p["notice"]}</p>
-      {links([(page["browse"], "materials/")], local)}</div>
-      <div class="worksheet" id="worksheet"><label for="scenario">{p["choose"]}</label><select id="scenario">{options}</select>
-      <p class="scenario-prompt" aria-live="polite">{escape(page["prompts"][0])}</p>
-      <label for="draft">{p["draft"]}</label><p id="draft-hint" class="hint">{p["hint"]}</p>
-      <textarea id="draft" aria-describedby="draft-hint" data-required="{required}"></textarea>
-      <button type="button" class="button navy" hidden>{p["save"]}</button><noscript><dl>{prompts}</dl><p>{p["noscript"]}</p></noscript>
-      <p role="status" data-saved="{p["saved"]}"></p></div>'''
+def worksheet(page, email):
+    options = []
+    prompts = []
+    for key, title, subject, hint in zip(
+        SCENARIOS, page["scenarios"], page["subjects"], page["prompts"], strict=True
+    ):
+        options.append(f'<option value="{key}" data-subject="{escape(subject)}" '
+                       f'data-prompt="{escape(hint)}">{escape(title)}</option>')
+        prompts.append(f"<div><dt>{escape(title)}</dt><dd>{escape(hint)}</dd></div>")
+    return template("participate", {
+        **text_fields(page), "email": escape(email), "mailto": "mailto:" + escape(email),
+        "options": "".join(options), "prompts": "".join(prompts), "first_prompt": escape(page["prompts"][0]),
+    })
 
 
-def article(lang, slug, page, site, local):
+def article(lang, slug, page, site, local, base, email):
     sections = page.get("section", [])
     sidebar = ""
     status = ""
     parent = ""
-    body = "".join(section_html(section, local) for section in sections)
+    body = "".join(section_html(section, local, base) for section in sections)
     if sections:
         items = "".join(anchor(s["title"], "#" + s["id"]) for s in sections)
         sidebar = f'<nav class="aside" aria-label="{escape(site["contents"])}"><p class="eyebrow">{escape(site["contents"])}</p>{items}</nav>'
     if slug == "materials":
-        body = material_list(lang, page, local)
+        body = material_list(lang, page, local, base)
     if slug == "participate":
-        body = worksheet(lang, page, local)
+        body = worksheet(page, email)
     if "source" in page:
         parent = '<span aria-hidden="true">/</span>' + anchor(site["materials"], local + "materials/")
         status = f'<p class="status">{escape(page["kind"])} · {escape(page["status"])}</p>'
+        status += f'<p class="credit-line">{escape(page["credit_line"])}</p>'
+        if "original" in page:
+            status += anchor(*page["original"], ' class="source-link"')
         body += f'<div class="credit"><strong>{escape(site["source"])}</strong><p>{escape(page["source"])}</p></div>'
     return template("article", {**text_fields(site), **text_fields(page), "local": local, "parent": parent,
                     "status": status, "layout": "" if sections else " single", "sidebar": sidebar, "body": body})
@@ -132,6 +142,8 @@ def metadata(origin, path, preview):
 
 
 def build(output, origin, preview):
+    with (ROOT / "content" / "contact.toml").open("rb") as file:
+        email = tomllib.load(file)["email"]
     locales = {lang: content(lang, "site") for lang in LANGS}
     ids = {lang: content(lang, "materials")["note_ids"] for lang in LANGS}
     if ids["ru"] != ids["en"]:
@@ -153,10 +165,11 @@ def build(output, origin, preview):
             switches = "".join(f'<strong lang="{code}" aria-current="true">{code.upper()}</strong>' if code == lang else
                                anchor(code.upper(), base + code + "/" + slug, f' lang="{code}" hreflang="{code}"')
                                for code in LANGS)
-            main = home(page, site, local, base) if not slug else article(lang, slug.rstrip("/"), page, site, local)
+            main = home(page, site, local, base) if not slug else article(lang, slug.rstrip("/"), page, site, local, base, email)
             html = template("page", {**text_fields(site), "base": base, "local": local, "lang": lang, "nav": nav,
                             "title": escape(page["title"]), "description": escape(page["intro"]),
-                            "language_links": switches, "main": main, "metadata": metadata(origin, path, preview)})
+                            "language_links": switches, "main": main, "email": escape(email),
+                            "metadata": metadata(origin, path, preview)})
             write(output / path / "index.html", html)
             ET.SubElement(ET.SubElement(sitemap, "url"), "loc").text = origin + path
     write(output / ".nojekyll", "")

@@ -1,0 +1,5 @@
+fast_period_h,slow_period_h,K_over_detuning,K_rad_per_h,regime,phase_gap_deg,shared_period_h
+24.0,25.0,0.0,0.000000000,drift,,
+24.0,25.0,0.5,0.005235988,drift,,
+24.0,25.0,1.0,0.010471976,threshold,90.000000,24.489796
+24.0,25.0,2.0,0.020943951,stable_lock,30.000000,24.489796

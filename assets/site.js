@@ -13,14 +13,19 @@
 
   try { localStorage.setItem(localeKey, lang); } catch { /* Storage is optional. */ }
   function pairLanguageLinks() {
+    const scenario = document.querySelector('.worksheet select');
+    const route = new URLSearchParams(location.search).get('scenario');
     document.querySelectorAll('.language a').forEach(link => {
-      link.hash = location.hash;
-      const route = new URLSearchParams(location.search).get('scenario');
-      if (document.querySelector('.worksheet') && ['join', 'idea', 'challenge', 'question'].includes(route)) {
-        const target = new URL(link.href);
-        target.searchParams.set('scenario', route);
-        link.href = target.href;
+      const target = new URL(link.href);
+      target.hash = location.hash;
+      if (scenario) {
+        if ([...scenario.options].some(option => option.value === route)) {
+          target.searchParams.set('scenario', route);
+        } else {
+          target.searchParams.delete('scenario');
+        }
       }
+      link.href = target.href;
     });
   }
   pairLanguageLinks();
@@ -43,34 +48,68 @@
   if (!worksheet) return;
   const select = worksheet.querySelector('select');
   const draft = worksheet.querySelector('textarea');
-  const hint = worksheet.querySelector('.scenario-prompt');
-  const save = worksheet.querySelector('button');
-  const result = worksheet.querySelector('[role="status"]');
-  function showPrompt() {
-    hint.textContent = select.selectedOptions[0].dataset.prompt;
-    result.textContent = '';
+  const prompt = worksheet.querySelector('.scenario-prompt');
+  const compose = worksheet.querySelector('#compose');
+  const copy = worksheet.querySelector('#copy-message');
+  const save = worksheet.querySelector('#save-draft');
+  const status = worksheet.querySelector('[role="status"]');
+
+  function updateMessage() {
+    const choice = select.selectedOptions[0];
+    const subject = encodeURIComponent(choice.dataset.subject);
+    const body = encodeURIComponent(draft.value.replace(/\r\n|\r|\n/g, '\r\n'));
+    compose.href = compose.dataset.mailto + '?subject=' + subject + '&body=' + body;
+    status.textContent = '';
   }
-  function readScenario() {
-    const scenario = new URLSearchParams(location.search).get('scenario');
-    if ([...select.options].some(option => option.value === scenario)) select.value = scenario;
-    showPrompt();
-  }
-  readScenario();
-  window.addEventListener('hashchange', readScenario);
-  select.addEventListener('change', () => {
-    history.replaceState(null, '', '?scenario=' + select.value + '#worksheet');
+  function showScenario() {
+    const route = new URLSearchParams(location.search).get('scenario');
+    const known = [...select.options].some(option => option.value === route);
+    select.value = known ? route : select.options[0].value;
+    prompt.textContent = select.selectedOptions[0].dataset.prompt;
+    updateMessage();
     pairLanguageLinks();
-    showPrompt();
+  }
+
+  showScenario();
+  window.addEventListener('popstate', showScenario);
+  select.addEventListener('change', () => {
+    const url = new URL(location.href);
+    url.searchParams.set('scenario', select.value);
+    url.hash = 'worksheet';
+    history.replaceState(null, '', url);
+    showScenario();
   });
+  draft.addEventListener('input', () => {
+    draft.setCustomValidity('');
+    updateMessage();
+  });
+  // Read again on activation for text restored by the browser or a password manager.
+  compose.addEventListener('click', updateMessage);
+
+  function hasMessage() {
+    if (draft.value.trim()) return true;
+    draft.setCustomValidity(draft.dataset.required);
+    draft.reportValidity();
+    return false;
+  }
+  copy.hidden = false;
+  copy.addEventListener('click', async () => {
+    if (!hasMessage()) return;
+    try {
+      await navigator.clipboard.writeText(draft.value);
+      status.textContent = status.dataset.copied;
+    } catch {
+      draft.focus();
+      draft.select();
+      status.textContent = status.dataset.copyFallback;
+    }
+  });
+
   save.hidden = false;
   save.addEventListener('click', () => {
-    if (!draft.value.trim()) {
-      draft.setCustomValidity(draft.dataset.required);
-      draft.reportValidity();
-      return;
-    }
-    const text = [select.selectedOptions[0].text, hint.textContent, '', draft.value.trim()].join('\n');
-    const file = URL.createObjectURL(new Blob([text + '\n'], {type: 'text/plain;charset=utf-8'}));
+    if (!hasMessage()) return;
+    const text = select.selectedOptions[0].dataset.subject + '\n\n' + draft.value.trim() + '\n';
+    const file = URL.createObjectURL(new Blob([text], {type: 'text/plain;charset=utf-8'}));
     const link = document.createElement('a');
     link.href = file;
     link.download = 'instman-' + lang + '-' + select.value + '.txt';
@@ -78,10 +117,6 @@
     link.click();
     link.remove();
     setTimeout(() => URL.revokeObjectURL(file), 1000);
-    result.textContent = result.dataset.saved;
-  });
-  draft.addEventListener('input', () => {
-    draft.setCustomValidity('');
-    result.textContent = '';
+    status.textContent = status.dataset.saved;
   });
 })();

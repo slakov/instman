@@ -1,20 +1,24 @@
 title = "Site and privacy"
-intro = "This edition offers public reading materials and a worksheet you can use on your own device."
+intro = "You can read the materials freely. If you decide to contact the Institute, you choose what to share."
+
 [[section]]
 id = "reading"
 title = "Reading and language choice"
-body = ["Pages, images and fonts are served by GitHub Pages. The site uses no analytics or advertising scripts. Your browser saves your language choice locally so the home address can reopen in that language. Links to a specific language take you directly there."]
+body = ["GitHub Pages serves the pages, images and fonts. The site uses no analytics or advertising scripts. Your browser remembers your language choice on your device. A link to a specific language always opens that edition."]
+
 [[section]]
 id = "drafts"
-title = "What happens to an enquiry?"
-body = ["Text entered in the worksheet stays in the page. Downloading creates a text file on your device. The site receives no copy. There is no account, inbox or attachment upload. A public recipient and the terms for future correspondence are still being decided."]
+title = "Drafts and email"
+body = ["You can write an enquiry on the participation page and download a copy to your device. The page keeps your text in the current tab. Choosing email opens your email application with a draft addressed to the Institute of the Human. You can edit the message there and decide whether to send it.", "When you send the email, the recipient receives your message and the sender details your email service includes. The website itself does not collect a copy of the enquiry."]
+
 [[section]]
 id = "hosting"
 title = "Hosting"
 body = ["GitHub, the hosting provider, states that it logs visitors’ IP addresses for security when serving GitHub Pages websites."]
 links = [["GitHub Pages and data collection", "https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection"]]
+
 [[section]]
 id = "credits"
 title = "Image and typography"
-body = ["The Wotton Oak, an etching after Jacob George Strutt dated 1823, is reproduced from the Wellcome Collection (18303i, Public Domain Mark). The site uses Playfair Display and Montserrat under the SIL Open Font License 1.1."]
-links = [["View the original etching", "https://wellcomecollection.org/works/gcjezqme"]]
+body = ["The Wotton Oak, an etching after Jacob George Strutt dated 1823, is reproduced from the Wellcome Collection (18303i, Public Domain Mark). The site serves Adobe’s Source Sans 3 under the SIL Open Font License and uses a system serif for artwork captions."]
+links = [["View the original etching", "https://wellcomecollection.org/works/gcjezqme"], ["Source Sans 3", "https://github.com/adobe-fonts/source-sans"]]

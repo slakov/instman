@@ -1,0 +1,22 @@
+title = "Can two clocks of different speeds keep time together?"
+intro = "Imagine one clock taking 24 hours to complete a cycle and another taking 25. How strongly must they influence one another to keep a fixed distance apart?"
+kind = "IH-01 · Worked example"
+status = "Reproducible calculation"
+credit_line = "Site calculation · 23 November 2026"
+source = "Model convention from Steven H. Strogatz, “From Kuramoto to Crawford” (2000), equation 3.1. The periods and coupling values are illustrative inputs chosen for this worked example."
+
+[[section]]
+id = "setup"
+title = "Follow the gap between the hands"
+body = ["Each hand makes one full turn per natural period T. Its angular speed is ω = 2π/T in radians per hour. In this two-clock version of the Kuramoto model, each hand changes its speed by (K/2) × sin(other hand’s angle − its own angle). K measures the strength of their interaction.", "Let δ be the faster hand’s angle minus the slower hand’s angle, and let Δω = 2π/24 − 2π/25. Subtracting their speeds gives dδ/dt = Δω − K sin δ. A constant gap requires the right-hand side to be zero."]
+
+[[section]]
+id = "result"
+title = "One speed, two different positions"
+body = ["The threshold is K = Δω, about 0.01047 radians per hour. Below it the faster hand keeps gaining. At the threshold, a 90° gap can hold. Above it there is a stable gap: a small displacement brings the hands back toward that separation.", "At twice the threshold, sin δ = 1/2 and the stable gap is 30°, one twelfth of a turn. The hands now turn at the same speed. Their opposite corrections cancel when averaged, so the common period is 2/(1/24 + 1/25) = 1200/49 hours, about 24.49 hours."]
+
+[[section]]
+id = "reproduce"
+title = "Reproduce the four cases"
+body = ["Save the Python file and run python3 phase_locking.py > results.csv. It evaluates the formula for coupling strengths of 0, ½, 1 and 2 times the threshold. Blank CSV cells mark cases with no constant gap or common period. Change the periods at the top of the script to try another pair.", "This separate two-clock exercise uses exact formulas. The earlier IH-01 account concerns forty oscillators with unavailable simulation settings. The values here describe the two ideal clocks only."]
+links = [["Python calculation", "assets/studies/phase-locking/phase_locking.py"], ["Results (CSV)", "assets/studies/phase-locking/results.csv"], ["Strogatz’s model, equation 3.1 (PDF)", "https://web.mit.edu/~jadbabai/www/ESE680/Strogatz_Kuramoto.pdf"]]

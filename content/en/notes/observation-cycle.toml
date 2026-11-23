@@ -1,7 +1,8 @@
 title = "Planning a first observation"
-intro = "A six-step worksheet for taking a question from an initial impression to a decision about what to do next."
-kind = "Method · Worksheet"
+intro = "Six prompts for recording what you expected, what happened and what you would try next."
+kind = "Editorial worksheet"
 status = "Proposed method"
+credit_line = "Site edition · 23 November 2026 · v1.0"
 source = "Editorial note for this site, v1.0, 23 November 2026. Based on the practical cycle proposed on 21 November and the v0.3 brief, §4. The worksheet illustrates the concept. Its effectiveness has not been evaluated. Russian original with an English translation."
 [[section]]
 id = "prepare"

@@ -1,4 +1,4 @@
-# University / Institute of the Human
+# Институт человека · Institute of the Human
 
 A bilingual public introduction to an initiative in development. The Russian and English editions have equivalent pages under `/ru/` and `/en/`. The root opens Russian on a first visit and remembers a visitor’s subsequent choice. Reading and navigation work without JavaScript.
 
@@ -22,13 +22,13 @@ The workflow builds, checks and publishes static HTML on pushes to `main`. Selec
 
 ## Editorial decisions for this edition
 
-- The name is provisional. The text-based header uses the shorter Institute name. The homepage gives the full working name.
-- The theme uses the written historical guide’s navy (`#0B2345`), ivory, slate and gold. The visual sheet’s alternate blue (`#0B2D5B`) remains an open branding decision. The historic emblem, architectural concepts, internal files and personal names are outside this publication.
-- Enquiries are local text drafts. The site has no submission endpoint. A public recipient, operator and handling terms would be needed to introduce correspondence.
+- The public working name is **Институт человека / Institute of the Human** in both the masthead and the body. The About page records its provisional status. The typography and navy-and-gold palette define this web edition; an official emblem and institutional identity still await approval.
+- The public mailbox belongs to the Institute. Set it once in `content/contact.toml`. The participation page opens an addressed email in the visitor’s own mail application. Visitors using webmail can copy the address and message. The site has no backend, collects no draft text and gives no delivery confirmation.
+- Materials identify external primary research, a reproducible mathematical example and editorial guides at list level. Each entry has a dated credit. Keep both language versions in sync. The two-clock example includes source code and its generated CSV in `assets/studies/phase-locking/`.
 - The brief’s comprehension test still requires someone unfamiliar with the project. Ask what the initiative is for, what harmonious development means here, what role the Center plays and where they would personally begin.
 
 ## Assets
 
 The Wotton Oak, etching after Jacob George Strutt, 1823. Wellcome Collection, reference 18303i, Public Domain Mark. The museum scan is served locally as WebP. [Catalogue record](https://wellcomecollection.org/works/gcjezqme)
 
-Playfair Display and Montserrat are served locally in WOFF2. Their SIL Open Font License texts are in `assets/fonts/`. [Playfair Display](https://github.com/google/fonts/tree/main/ofl/playfairdisplay) · [Montserrat](https://github.com/google/fonts/tree/main/ofl/montserrat)
+Source Sans 3 is self-hosted in WOFF2 with Cyrillic and Latin coverage. The font is distributed under the SIL Open Font License 1.1; its license is in `assets/fonts/SourceSans3-OFL.txt`. [Adobe Source Sans](https://github.com/adobe-fonts/source-sans)

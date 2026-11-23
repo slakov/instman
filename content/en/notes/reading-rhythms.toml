@@ -1,7 +1,8 @@
 title = "How to read a historical timetable"
-intro = "When an old source assigns an activity to a particular hour, what would it take to test the claim?"
-kind = "IH-01 · Reading note"
-status = "Partial review"
+intro = "A guide to tracing a historical claim to its source and choosing what an observation could actually test."
+kind = "Editorial guide · IH-01"
+status = "Research method"
+credit_line = "Site edition · 23 November 2026 · v1.0"
 source = "Editorial note for this site, v1.0, 23 November 2026. Based on the IH-01 discussions of 11–12 November and the v0.3 brief, §§5–5.1. Historical research PDFs were unavailable. Written in Russian with an English translation."
 [[section]]
 id = "trace"

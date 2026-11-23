@@ -1,17 +1,20 @@
 title = "Creativity Center"
-intro = "The proposed Center for Scientific and Technical Creativity would give people a place to investigate an idea together. It is one way the wider initiative could put its mission into practice."
+intro = "A teacher notices that one classroom overheats. A student has an unfinished design. The proposed Center for Scientific and Technical Creativity would give either of them a place to find collaborators and choose a first test."
+
 [[section]]
 id = "paths"
-title = "Two ways to begin"
-items = [["I have an idea", "Bring an observation, a question or an unfinished design. The first conversation would identify a small test. An author can start without a client."], ["We have a challenge", "A school, community or organization can describe a real situation and offer a setting for a test. Agree on access, responsibilities, resources and criteria before starting."]]
-links = [["Prepare an idea", "participate/?scenario=idea#worksheet"], ["Frame a challenge", "participate/?scenario=challenge#worksheet"]]
+title = "An idea or a practical challenge"
+items = [["I have an idea", "Start with what you have noticed or made. Describe the question behind it and one thing a test could help you learn. You can bring an idea at any stage."], ["We have a challenge", "A school, community or organization can describe a problem and offer a place to investigate it. Explain who is affected, what can be observed and whose agreement would be needed."]]
+links = [["Describe your idea", "participate/?scenario=idea#worksheet"], ["Describe your organization’s challenge", "participate/?scenario=challenge#worksheet"]]
+
 [[section]]
 id = "roles"
-title = "Who does what?"
-items = [["Author", "Helps choose the question, the first test and how the result should be interpreted."], ["Mentor", "Helps select a method, define safe conditions and distinguish an assumption from an observation."], ["Host site", "Explains what can be observed in the setting, who can take part and what limits apply."]]
-body = ["A small coordinating team and temporary working groups have been proposed. A workshop, an experiment fund and paid external assignments would each require a separate decision."]
+title = "Who would take part?"
+items = [["Author", "Helps frame the question and decide what a result would mean for the original idea."], ["Mentor", "Helps choose a method and safe conditions, and checks which assumptions the test can address."], ["Host site", "Defines the boundaries of the test, who can participate and what resources or records can be shared."]]
+body = ["The proposal calls for a small coordinating team and temporary groups for individual projects. A shared workshop, funding for experiments and paid assignments would each need a separate decision."]
+
 [[section]]
 id = "energy"
 title = "A possible first program"
-body = ["Why might a schoolroom overheat while otherwise similar rooms stay comfortable? A possible energy-efficiency pilot would compare occupancy, temperature and operating schedules. This is a question for a future host site. There are no reported measurements or savings.", "The earlier CEERS v0.2 concept discussed buildings, energy management, autonomy, computing, resources and human working conditions. Whether to take up any of its proposals is open. Healthy aging remains the wider initiative’s first selected applied direction."]
-links = [["Read the pilot note", "materials/energy-pilot/"]]
+body = ["Why might one classroom overheat while another stays comfortable? A school could help compare the rooms’ occupancy, temperature and equipment schedules. This possible energy-efficiency pilot still needs a host and agreed measurements.", "An earlier proposal on energy efficiency and resource sustainability (CEERS v0.2) also considered building operations, computing and working conditions. The Center could draw on that work when choosing a first program. Healthy aging is the broader initiative’s first applied research theme."]
+links = [["Read the classroom pilot outline", "materials/energy-pilot/"]]

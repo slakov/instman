@@ -1,23 +1,29 @@
 title = "About the initiative"
-intro = "What does it mean to develop as a person while living alongside others? The proposed University / Institute of the Human begins with this question."
+intro = "How do we decide what matters to us when our choices also shape the lives of others? The Institute of the Human grew out of a conversation about this question."
+
 [[section]]
 id = "origins"
-title = "A question about the living world"
-body = ["The founding conversation began in November 2026 with an everyday decision about vegetarianism. What responsibilities follow from the way our food choices affect other living beings? People can disagree about what to eat and still investigate that question together.", "Understanding means finding out what a claim rests on. Developing means choosing an action and learning from its consequences. Becoming describes the slower work of carrying that choice into everyday relationships."]
+title = "What we eat and whom it affects"
+body = ["The conversation began in November 2026 with a question about vegetarianism. When we choose what to eat, what responsibility do we have towards the animals affected? People with different diets can examine the same question together. A first step is to ask which consequences we know about, which we assume, and what evidence could change our minds.", "The three words on the homepage describe that process. Understanding means looking for the basis of a belief. Developing means choosing an action and learning from its consequences. Becoming is the slower work of making that choice part of everyday life."]
+
 [[section]]
 id = "perspectives"
-title = "Four perspectives"
-items = [["The person", "What do I experience, understand and choose?"], ["Relationships", "How does my choice affect other people and living beings?"], ["Environment", "Which natural and built conditions influence what is possible?"], ["Evolution", "How do people and their ways of living together change over time? Here evolution names a question about change."]]
+title = "Four perspectives on one choice"
+items = [["The person", "What do I experience? What can I choose?"], ["Relationships", "Whose life might change because of my decision?"], ["Environment", "Which natural and built conditions shape my options?"], ["Evolution", "How do people and their ways of living together change over time?"]]
+
 [[section]]
 id = "levels"
 title = "Seven questions about development"
-body = ["This proposed conceptual framework is open to criticism and revision. Its seven levels name different questions someone might ask about a decision."]
-items = [["State", "What is happening now?"], ["Awareness", "How do I perceive the situation?"], ["Meaning", "Which beliefs and values give it meaning?"], ["Will", "What do I intend to choose?"], ["Action", "How does that intention become an act?"], ["Value", "What does the act create, and for whom?"], ["Evolution", "What have I learned and how have I changed?"]]
+body = ["These questions form a working framework. Try applying them to one decision you have made."]
+items = [["State", "What is happening now?"], ["Awareness", "How do I understand the situation?"], ["Meaning", "Which values give it meaning for me?"], ["Will", "What do I intend to do?"], ["Action", "How does that intention become an act?"], ["Value", "What does my action create, and for whom?"], ["Evolution", "What have I learned, and how have I changed?"]]
+
 [[section]]
 id = "cycle"
-title = "A practical cycle"
-body = ["A separate six-step cycle helps plan and review an actual observation. Describe the starting state, set a goal, make a plan, act, check what happened, then describe the new state. At the check, compare what you expected with what you observed. You can repeat, change the method or set the question aside."]
+title = "Planning an observation"
+body = ["A separate six-step cycle is for practical work. Describe the starting state, set a goal, make a plan, act, check the result and describe the new state. When you check the result, compare what you expected with what you observed. That comparison can help you decide whether to repeat the observation, change the method or set the question aside."]
+links = [["Read the observation worksheet", "materials/observation-cycle/"]]
+
 [[section]]
 id = "organisation"
-title = "What is still being decided"
-body = ["The initiative is developing its research materials and proposed ways of working. Its name and academic and legal forms remain open. Programs, facilities and accreditation have yet to be established.", "A cooperative is under discussion both for a development team and for a wider community of shared projects. Membership, governance, rights to results and financial arrangements remain undecided."]
+title = "Name and current status"
+body = ["Institute of the Human is the working name for this research and education initiative. Its permanent name, visual identity, legal form and academic status remain open. Work so far includes research questions, preliminary reviews and proposals for joint projects.", "A cooperative is one proposal for organizing the development team or a wider community. Membership, governance, rights to results and financial arrangements would need to be agreed before it could operate."]

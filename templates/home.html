@@ -1,14 +1,67 @@
-<section class="hero"><div class="wrap hero-grid">
-  <div class="hero-copy"><p class="eyebrow light"><span class="gold-rule"></span>$working_name</p>
-    <h1>$mission</h1><p class="intro">$intro</p>
-    <div class="hero-links"><a class="button primary" href="${local}about/">$about</a><a class="underlink" href="${local}research/">$research</a></div>
-    <p class="stage"><i aria-hidden="true"></i>$stage</p>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="stage"><span>$working_name</span><span>$stage</span></p>
+      <h1>$mission</h1>
+      <p class="intro">$intro</p>
+      <div class="hero-links">
+        <a class="button primary" href="${local}about/">$about</a>
+        <a class="underlink" href="${local}research/">$research</a>
+      </div>
+    </div>
+    <figure class="plate">
+      <div class="plate-frame">
+        <img src="${base}assets/wotton-oak.webp" width="760" height="618" fetchpriority="high" alt="$art_alt">
+      </div>
+      <figcaption><cite>$art_title</cite><span>$art_credit</span></figcaption>
+    </figure>
   </div>
-  <figure class="plate"><div class="plate-frame"><img src="${base}assets/wotton-oak.webp" width="760" height="618" fetchpriority="high" alt="$art_alt"></div><figcaption><em>$art_title</em><span>$art_credit</span></figcaption></figure>
-</div></section>
-<section class="wrap foundation" aria-labelledby="framework"><div class="section-head"><div><p class="eyebrow">$frame_label</p><h2 id="framework">$frame_title</h2></div><p>$frame_text</p></div>
-<div class="domain-grid">$domains</div></section>
-<section class="case-band"><div class="wrap case-grid"><div class="clock-plate" aria-hidden="true"><div class="clock"><span class="north">00</span><span class="east">06</span><span class="south">12</span><span class="west">18</span><em>$dial</em></div><small>$dial_caption</small></div><div><p class="eyebrow">$case_label <b>IH-01</b></p><h2>$case_title</h2><p>$case_text</p><p class="status">$case_stage</p><a class="text-link" href="${local}research/">$case_link</a></div></div></section>
-<section class="wrap starts"><p class="eyebrow">$start_label</p><h2>$start_title</h2><div class="routes">$paths</div></section>
-<section class="forms"><div class="wrap forms-grid"><h2>$forms_title</h2><div>$forms<div class="link-row">$links</div></div></div></section>
-<section class="wrap endcap"><div><h2>$end_title</h2><p>$end_text</p></div><a class="button navy" href="${local}materials/">$materials</a></section>
+</section>
+
+<section class="foundation" aria-labelledby="framework">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="eyebrow">$frame_label</p><h2 id="framework">$frame_title</h2></div>
+      <p>$frame_text</p>
+    </div>
+    <div class="domain-grid">$domains</div>
+  </div>
+</section>
+
+<section class="case-band" aria-labelledby="featured-research">
+  <div class="wrap case-grid">
+    <div class="case-copy">
+      <p class="eyebrow">$case_label <b>IH-01</b></p>
+      <h2 id="featured-research">$case_title</h2>
+      <p>$case_text</p>
+      <p class="status">$case_stage</p>
+      <a class="text-link" href="${local}research/">$case_link</a>
+    </div>
+    <figure class="clock-plate" aria-hidden="true">
+      <div class="clock">
+        <span class="north">00</span><span class="east">06</span>
+        <span class="south">12</span><span class="west">18</span>
+        <strong>$dial</strong>
+      </div>
+      <figcaption>$dial_caption</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap starts" aria-labelledby="participation">
+  <p class="eyebrow">$start_label</p>
+  <h2 id="participation">$start_title</h2>
+  <div class="routes">$paths</div>
+</section>
+
+<section class="forms" aria-labelledby="ways-of-working">
+  <div class="wrap forms-grid">
+    <h2 id="ways-of-working">$forms_title</h2>
+    <div>$forms<div class="link-row">$links</div></div>
+  </div>
+</section>
+
+<section class="wrap endcap">
+  <div><h2>$end_title</h2><p>$end_text</p></div>
+  <a class="button navy" href="${local}materials/">$materials</a>
+</section>

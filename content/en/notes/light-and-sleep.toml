@@ -1,0 +1,24 @@
+title = "How does a week outdoors change the timing of sleep?"
+intro = "Eight adults followed their usual routines for a week, then spent a week camping in Colorado. The researchers tracked both when each person slept and when their biological night began."
+kind = "External research · Field study"
+status = "Published study"
+credit_line = "Kenneth P. Wright Jr. and colleagues · Current Biology · 1 August 2013"
+original = ["Read the original paper (English)", "https://pmc.ncbi.nlm.nih.gov/articles/PMC4020279/"]
+source = "Entrainment of the Human Circadian Clock to the Natural Light-Dark Cycle. Current Biology 23 (2013), 1554–1558. Kenneth P. Wright Jr. (corresponding author), Andrew W. McHill, Brian R. Birks, Brandon R. Griffin, Thomas Rusterholz and Evan D. Chinoy. Editorial reading guide by the site, v1.0, 23 November 2026, in English and Russian."
+[[section]]
+id = "method"
+title = "How the team measured biological night"
+body = ["Participants wore wrist monitors that recorded light and movement during both weeks. They chose their own sleep times. After each week, the team took saliva samples in a dimly lit laboratory to find when melatonin levels began to rise. That rise gave the researchers a biological marker they could compare with the observed sleep times."]
+[[section]]
+id = "finding"
+title = "Two clocks shifted by different amounts"
+body = ["After camping, the evening rise in melatonin began about two hours earlier on average. Sleep onset and waking shifted earlier by about 1.2 hours. Figure 3 shows both shifts on a common time axis. The difference shows how much a sleep diary alone would have missed."]
+[[section]]
+id = "limits"
+title = "What the comparison can tell us"
+body = ["All eight people completed the weeks in the same order, in July at one latitude. Camping changed daylight exposure, physical activity and daily routines together. The study documents a shift under these conditions. It leaves open how much each of those changes contributed."]
+[[section]]
+id = "sources"
+title = "Read the evidence"
+body = ["Figure 1 shows one participant’s daily record. Figure 2 compares light exposure across the two weeks. Figure 3 is the place to check the timing result. The original paper and its figures are in English."]
+links = [["Full text and figures on PubMed Central", "https://pmc.ncbi.nlm.nih.gov/articles/PMC4020279/"], ["Publication record on PubMed", "https://pubmed.ncbi.nlm.nih.gov/23910656/"]]
