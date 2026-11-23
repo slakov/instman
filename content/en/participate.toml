@@ -1,0 +1,13 @@
+title = "Take part"
+intro = "You can start by reading a note. If you have a question of your own, choose the route that fits and prepare a short enquiry."
+contact = "Contact is being arranged"
+notice = "A public recipient and arrangements for handling enquiries have yet to be confirmed. You can prepare and download a draft here for your own use. It stays in this browser tab until you save it or leave."
+browse = "Explore materials"
+choose = "What would you like to do?"
+scenarios = ["Join a line of work", "Bring an idea", "Bring an organization’s challenge", "Ask a general question"]
+prompts = ["Which question interests you? What method or experience could you contribute?", "What have you noticed? What is the smallest test that could tell you more?", "What happens at your site, who is affected, and how could you tell if conditions improved?", "What would you like to understand about the initiative or a particular note?"]
+draft = "Your draft"
+hint = "Keep it brief. Leave out personal health details, information about other people and confidential inventions."
+save = "Download my draft"
+saved = "Your text file is ready. Your draft has not been sent."
+noscript = "You can select and copy your text to keep a draft."

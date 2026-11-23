@@ -1,0 +1,52 @@
+name: Bilingual website
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build public site
+        if: github.event_name != 'pull_request'
+        run: python scripts/build.py
+      - name: Build review preview
+        if: github.event_name == 'pull_request'
+        run: python scripts/build.py --preview
+      - run: python scripts/check.py _site
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: _site
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: website-preview
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    concurrency:
+      group: pages-deployment
+      cancel-in-progress: false
+    steps:
+      - name: Publish to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

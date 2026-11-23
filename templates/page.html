@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="$lang">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b2345">
+  <title>$title · $name</title>
+  <meta name="description" content="$description">
+  $metadata
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="${base}assets/site.css">
+  <script defer src="${base}assets/site.js"></script>
+</head>
+<body>
+<a href="#main" class="skip">$skip</a>
+<header class="masthead"><div class="wrap header-row">
+  <a class="wordmark" href="$local">$name</a>
+  <nav class="desktop-nav" aria-label="$navigation">$nav</nav>
+  <div class="language" aria-label="$languages">$language_links</div>
+  <details class="mobile-nav"><summary>$menu <span aria-hidden="true"></span></summary><nav aria-label="$navigation">$nav</nav></details>
+</div></header>
+<main id="main" tabindex="-1">$main</main>
+<footer><div class="wrap footer-row"><div><a class="wordmark" href="$local">$name</a><p>$footer</p></div><div><a href="${local}privacy/">$privacy</a><small>$updated</small></div></div></footer>
+</body>
+</html>

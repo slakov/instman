@@ -1,0 +1,13 @@
+title = "Why does one classroom overheat?"
+intro = "A possible energy-efficiency pilot starts with a question about the conditions people experience in a room."
+kind = "Creativity Center · Pilot outline"
+status = "Proposal"
+source = "Editorial note for this site, v1.0, 23 November 2026. Based on the CEERS v0.2 concept and Center proposals of 22 November, summarized in the v0.3 brief, §§7–8. Illustrative scenario. No host, measurements or savings confirmed. Russian original with an English translation."
+[[section]]
+id = "question"
+title = "Start with the room"
+body = ["A host school could identify when the room is uncomfortable and select a comparable room. The group would need to agree on a time window, an indicator of comfort and access to information about occupancy, shading and ventilation."]
+[[section]]
+id = "test"
+title = "What would count as a result?"
+body = ["The group could compare temperatures and operating schedules in the two rooms. Energy use, financial cost and comfort would each need its own measure. Before any trial, agree on permissions, the comparison period and who will interpret the records."]

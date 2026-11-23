@@ -1,0 +1,17 @@
+title = "How to read a historical timetable"
+intro = "When an old source assigns an activity to a particular hour, what would it take to test the claim?"
+kind = "IH-01 · Reading note"
+status = "Partial review"
+source = "Editorial note for this site, v1.0, 23 November 2026. Based on the IH-01 discussions of 11–12 November and the v0.3 brief, §§5–5.1. Historical research PDFs were unavailable. Written in Russian with an English translation."
+[[section]]
+id = "trace"
+title = "Trace the statement"
+body = ["Copy the passage in context. Record the author, edition, language and how the text divides a day. A clock time added by a translator can change the question. Record gaps in the source chain, including uncertainties about later reconstructions."]
+[[section]]
+id = "compare"
+title = "Choose a comparison"
+body = ["Write down the historical claim and a possible measurable variable separately. For example, the time someone first records activity in a diary is a defined observation. A traditional image associated with dawn has a different kind of meaning. A common word alone gives no reason to equate them."]
+[[section]]
+id = "next"
+title = "Next step"
+body = ["Find a dated primary text for one time window. Document the translation and specify what observation would contradict the proposed interpretation."]

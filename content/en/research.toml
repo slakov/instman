@@ -1,0 +1,18 @@
+title = "Research and method"
+intro = "How do different cultures describe the rhythms of a day, and which parts of those descriptions could we test? IH-01 begins by asking what each source can establish."
+[[section]]
+id = "rhythms"
+title = "One day, four ways of asking"
+items = [["History · partial review", "Trace a time window to its text, edition and translator. A table attributed to Luvsan was reportedly compared with a scan. Its origin remains unresolved."], ["Mathematics · model formulation", "A numerical ratio, resonance and synchronization describe different things. The Kuramoto equation was set out as a possible model of interacting oscillators."], ["Biology · literature map", "BIO-MAP v0.1–v0.2.1 collects published rhythm ranges. They come from the literature. No participant measurements are available for this project."], ["Symbolism · interpretation", "A tradition may associate an hour with a quality or image. The meaning of that association can be studied in context. A biological interpretation would need independent evidence."]]
+[[section]]
+id = "evidence"
+title = "What can be checked today?"
+body = ["The November 2026 materials document a research program and a partial review. A reading attributed to Philolaus relies on a modern reconstruction. The chain back to the ancient source still needs checking.", "A later account describes a simulation with forty oscillators. Its code, starting conditions, frequencies and parameters were unavailable, so the reported result has yet to be reproduced. The literature map also leaves open whether its ranges support any particular historical time window."]
+[[section]]
+id = "observation"
+title = "From an old timetable to an observation"
+body = ["Take an account that associates a particular hour with activity. First identify what the author meant by activity. Then choose something a diary could record, such as sleep onset or the first active period of the day.", "A possible study would specify the hypothesis, record light exposure and daily routines, and say in advance what finding would count against the prediction. Human measurements were proposed. A protocol, recruitment and data collection remain future steps."]
+[[section]]
+id = "directions"
+title = "Other questions taking shape"
+items = [["Healthy aging · selected direction", "How can people retain the abilities and quality of life that matter to them as they age? This is the wider initiative’s first applied direction. Choosing an outcome and reviewing evidence for it comes before proposing any practice."], ["Human-centered AI · concept", "Could a tool help a person compare accounts of their own situation while preserving their decision about what to do? META-ORACLE Personal is a concept. Its proposed functions keep symbolic interpretations distinct from empirical evidence."]]

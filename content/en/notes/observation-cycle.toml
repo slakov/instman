@@ -1,0 +1,13 @@
+title = "Planning a first observation"
+intro = "A six-step worksheet for taking a question from an initial impression to a decision about what to do next."
+kind = "Method · Worksheet"
+status = "Proposed method"
+source = "Editorial note for this site, v1.0, 23 November 2026. Based on the practical cycle proposed on 21 November and the v0.3 brief, §4. The worksheet illustrates the concept. Its effectiveness has not been evaluated. Russian original with an English translation."
+[[section]]
+id = "prepare"
+title = "Before acting"
+body = ["State. Describe one situation, including when and where it occurs. Goal. Write the question in a way that allows more than one answer. Plan. Choose a small observation, its duration and something you can record consistently."]
+[[section]]
+id = "review"
+title = "After acting"
+body = ["Action. Carry out the observation and record the conditions. Check. Compare your expectation with the record and consider another explanation. New state. Write down what has changed in your understanding and what you would try next."]
